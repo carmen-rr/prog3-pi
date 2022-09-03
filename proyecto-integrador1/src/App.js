@@ -1,9 +1,30 @@
+//app es nuestro componente principal de la aplicacion en react 
+
+import React from "react";
+import {Switch, Route} from 'react-router-dom'
+import Header from "./components/Header/Header";
+//traigo los screens
+import Home from './screens/Home/Home'
+import Details from "./screens/Details/Details";
+import Categories from "./screens/Categories/Categories";
+import Favorites from "./screens/Favorites/Favorites";
+import NotFound from "./screens/NotFound/NotFound";
+
+
+
 function App() {
   return (
-    <div>
-    <p>Buenas tardes, yo todo limpio. Vos?</p>
-    <img src="https://cdn.memegenerator.es/imagenes/memes/full/22/66/22664717.jpg"/>
-    </div>
+    <>
+      <Header /> 
+      <Switch>
+        <Route path='/' exact={true} component={Home}/>
+        <Route path='/details/:id' component={Details}/>
+        <Route path='/categories' component={Categories}/>
+        <Route path='/favorites' component={Favorites}/>
+        <Route path='' component={NotFound}/>
+      </Switch>
+
+    </>
   );
  }
  
