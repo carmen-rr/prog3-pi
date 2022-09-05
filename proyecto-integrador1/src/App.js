@@ -9,6 +9,7 @@ import Details from "./screens/Details/Details";
 import Categories from "./screens/Categories/Categories";
 import Favorites from "./screens/Favorites/Favorites";
 import NotFound from "./screens/NotFound/NotFound";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -23,6 +24,8 @@ function App() {
         <Route path='/favorites' component={Favorites}/>
         <Route path='' component={NotFound}/>
       </Switch>
+      < Footer/>
+
 
     </>
   );
