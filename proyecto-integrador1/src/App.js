@@ -6,7 +6,8 @@ import Header from "./components/Header/Header";
 //traigo los screens
 import Home from './screens/Home/Home'
 import Details from "./screens/Details/Details";
-import Categories from "./screens/Categories/Categories";
+import AllTracks from "./screens/AllTracks/AllTracks";
+import AllAlbums from "./screens/AllAlbums/AllAlbums";
 import Favorites from "./screens/Favorites/Favorites";
 import NotFound from "./screens/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
@@ -20,7 +21,8 @@ function App() {
         <Switch>
           <Route path='/' exact={true} component={Home}/>
           <Route path='/details/:id' component={Details}/>
-          <Route path='/categories' component={Categories}/>
+          <Route path='/allTracks' component={AllTracks}/>
+          <Route path='/allAlbums' component={AllAlbums}/>
           <Route path='/favorites' component={Favorites}/>
           <Route path='' component={NotFound}/>
         </Switch>

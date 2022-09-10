@@ -27,7 +27,8 @@ function Header (){
         <ul className="Navegador">
 
         <li> <Link to='/'>Home</Link></li>
-        <li><Link to='/categories'>Categories</Link></li>
+        <li><Link to='/allTracks'>All Tracks</Link></li>    
+        <li><Link to='/allAlbums'>All Albums</Link></li>    
         <li><Link to='/details'>Details</Link></li>    
         <li><Link to='/favorites'>Favorites</Link></li>
         <li className='usuario'>Usuario </li>
