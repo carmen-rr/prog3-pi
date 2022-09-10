@@ -31,7 +31,7 @@ function Header (){
         <li><Link to='/allAlbums'>All Albums</Link></li>    
         <li><Link to='/details'>Details</Link></li>    
         <li><Link to='/favorites'>Favorites</Link></li>
-        <li className='usuario'>Usuario </li>
+        <li>Usuario </li>
         
         </ul>
 

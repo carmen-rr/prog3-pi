@@ -8,6 +8,10 @@ header {
     flex-direction: column;
     justify-content: space-between;
 }
+
+a{
+    color: white;
+}
 .imagenes-logo{
     display: flex;
     flex-wrap: wrap;
@@ -102,18 +106,11 @@ header {
     padding: 5px 10px;
     border-bottom: solid 3px transparent;
 }
-#home:hover, #genres:hover{
-    border-bottom: solid 3px rgb(16, 135, 233);
-}
+
 #my-playlist{
     background-color: rgb(16, 135, 233);
     padding: 5px;
     margin-bottom: 5px;
     border-radius: 40px;
-    border-bottom: none;
-}
-#my-playlist:hover{
-    color: rgba(255, 255, 255, 0.8);
-    background-color: rgb(28, 146, 243);
     border-bottom: none;
 }

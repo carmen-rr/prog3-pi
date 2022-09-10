@@ -49,7 +49,7 @@ class Home extends Component {
             }
             
             <div>
-                <Link to= "/favorites">
+                <Link to= "/allTracks">
                     <button className='viewAllButton'>VER TODAS LAS CATEGORIAS</button>
                 </Link>
             </div>
@@ -67,7 +67,7 @@ class Home extends Component {
             */ }
         
             <div>
-                <Link to= "/categories">
+                <Link to= "/allAlbums">
                     <button className='viewAllButton'>VER TODAS LAS CATEGORIAS</button>
                 </Link>
             </div>

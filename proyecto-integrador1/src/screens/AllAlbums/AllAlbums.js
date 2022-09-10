@@ -9,7 +9,7 @@ let objetoLiteral = {
 function Categories (){
     return (
         <>
-        <h1>Soy la Categoria</h1>
+        <h1>ALL ALBUMS</h1>
         <Link to={`/details/${objetoLiteral.id}`}>Un link a un contenido especifico</Link>
        </>
     )
