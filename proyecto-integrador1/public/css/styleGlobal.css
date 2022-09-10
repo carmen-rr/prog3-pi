@@ -1,53 +1,39 @@
-/* Resets */
 *{
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;}
+    
+body{
+    background-color: black;
 }
-ul,ol {
-    padding: 0;
+ul, ol{
+    padding: 0px;
 }
-li {
-    list-style-type:none;
+li{
+    list-style-type: none;
 }
-a {
-    text-decoration: none;
+a{
     color: white;
+    text-decoration: none;
 }
+<<<<<<< HEAD
 body {
     font-family: Nunito;
     margin: 0;
     background-color: rgb(255, 255, 255);
+=======
+abbr{
+    text-decoration: none;
+>>>>>>> c5acd65e4bfd82ef8eb0b0be8cab6976d205f094
 }
 
-/* Navigation */
-nav{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0 20px;
-    background-color: #4e73df;
-    color: #fff
+
+.gif {
+    width: 100%;
 }
 
-nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-}
 
-.main-nav li,
-.user li {
-    margin: 0 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-}
-
-.main-nav li:first-child {
-    font-weight: bold;
-}
+/* HEADER */
 
 .user img {
     width: 30px;
@@ -56,6 +42,7 @@ nav ul {
 }
 
 
+<<<<<<< HEAD
 /* footer */
 footer {
     background-color: #dedede;
@@ -65,3 +52,5 @@ footer {
     bottom: 0;
     width: 100%;
 }
+=======
+>>>>>>> c5acd65e4bfd82ef8eb0b0be8cab6976d205f094
