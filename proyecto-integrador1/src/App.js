@@ -12,21 +12,21 @@ import NotFound from "./screens/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
 
 
-
 function App() {
   return (
     <>
-      <Header /> 
-      <Switch>
-        <Route path='/' exact={true} component={Home}/>
-        <Route path='/details/:id' component={Details}/>
-        <Route path='/categories' component={Categories}/>
-        <Route path='/favorites' component={Favorites}/>
-        <Route path='' component={NotFound}/>
-      </Switch>
-      < Footer/>
-
-
+    <Header /> 
+      <main>
+        <Switch>
+          <Route path='/' exact={true} component={Home}/>
+          <Route path='/details/:id' component={Details}/>
+          <Route path='/categories' component={Categories}/>
+          <Route path='/favorites' component={Favorites}/>
+          <Route path='' component={NotFound}/>
+        </Switch>
+        </main>
+      
+      < Footer/> 
     </>
   );
  }
