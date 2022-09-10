@@ -9,7 +9,7 @@ class Home extends Component {
         super(props)
         this.state = {
             topCanciones:{},
-            nuevasCanciones: {},
+            topAlbums: {},
             ready:false
         }
     }
@@ -23,8 +23,17 @@ class Home extends Component {
         })
         console.log("DATA",data.data)}) //preg a Eve
         .catch(err => console.log(err))
+    
+        
+        fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=12&limit=5")
+        .then(resp => resp.json())
+        .then(data =>{ this.setState({
+            topAlbums: data.data,
+            ready: true
+        })
+        console.log("DATA",data.data)}) 
+        .catch(err => console.log(err))
     }
-
     render() {     
         return (
         
@@ -38,7 +47,30 @@ class Home extends Component {
                 </> : 
             'Cargando...'
             }
+            
+            <div>
+                <Link to= "/favorites">
+                    <button className='viewAllButton'>VER TODAS LAS CATEGORIAS</button>
+                </Link>
+            </div>
+
+            
+            <h1> TOP ALBUMS 🎶 </h1>
+            
+           { /*{ 
+            this.state.ready ? //if ternario
+                <>
+                <CardPadre info = {this.state.topAlbums}/>
+                </> : 
+            'Cargando...'
+            }
+            */ }
         
+            <div>
+                <Link to= "/categories">
+                    <button className='viewAllButton'>VER TODAS LAS CATEGORIAS</button>
+                </Link>
+            </div>
         </>
       )
     }
