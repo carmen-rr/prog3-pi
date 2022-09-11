@@ -72,7 +72,7 @@ import { Link } from 'react-router-dom'
                     
                     {/*<button onClick={() => this.props.borrar(this.props.info.name)}>BORRAR</button>*/}
                    
-                        <Link to= "/details/:id">
+                        <Link to= {`/trackDetail/${this.props.data.id}`}>
                             <button className='viewAllButton'>detalle</button>
                         </Link>
                     

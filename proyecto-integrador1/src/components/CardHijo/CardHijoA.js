@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import './CardHijo.css'
+import { Link } from 'react-router-dom'
 
 
  class CardHijoA extends Component {
@@ -47,7 +48,13 @@ import './CardHijo.css'
                     }>{this.state.textoBoton}</button>
 
                     <button onClick={() => this.props.borrar(this.props.info.name)}>BORRAR</button>
+
+                    <Link to= {`/albumDetail/${this.props.data.id}`}>
+                            <button className='viewAllButton'>detalle</button>
+                        </Link>
                 </div>
+                 
+
         )
     }
 }
