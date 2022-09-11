@@ -5,7 +5,8 @@ import {Switch, Route} from 'react-router-dom'
 import Header from "./components/Header/Header";
 //traigo los screens
 import Home from './screens/Home/Home'
-import Details from "./screens/Details/Details";
+import AlbumDetail from "./screens/AlbumDetail /albumDetail";
+import TrackDetail from "./screens/TrackDetail/trackDetail";
 import AllTracks from "./screens/AllTracks/AllTracks";
 import AllAlbums from "./screens/AllAlbums/AllAlbums";
 import Favorites from "./screens/Favorites/Favorites";
@@ -20,7 +21,8 @@ function App() {
       <main>
         <Switch>
           <Route path='/' exact={true} component={Home}/>
-          <Route path='/details/:id' component={Details}/>
+          <Route path='/albumDetail/:id' component={AlbumDetail}/>
+          <Route path='/trackDetail/:id' component={TrackDetail}/>
           <Route path='/allTracks' component={AllTracks}/>
           <Route path='/allAlbums' component={AllAlbums}/>
           <Route path='/favorites' component={Favorites}/>
