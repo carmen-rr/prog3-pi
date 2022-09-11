@@ -8,10 +8,12 @@ class Home extends Component {
     constructor(props){
         super(props)
         this.state = {
-            topCanciones:{},
-            topAlbums: {},
-            ready:false
+            topCanciones:[],
+            topAlbums: [],
+            readySong:false,
+            readyAlbums: false
         }
+
     }
 
     componentDidMount(){
@@ -19,19 +21,19 @@ class Home extends Component {
         .then(resp => resp.json())
         .then(data =>{ this.setState({
             topCanciones: data.data,
-            ready: true
+            readySong: true
         })
         console.log("DATA",data.data)}) //preg a Eve
         .catch(err => console.log(err))
     
         
-        fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=12&limit=5")
+        fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums")
         .then(resp => resp.json())
         .then(data =>{ this.setState({
             topAlbums: data.data,
-            ready: true
+            readyAlbums: true
         })
-        console.log("DATA",data.data)}) 
+        console.log("DATAALBUMS",data.data)}) 
         .catch(err => console.log(err))
     }
     render() {     
@@ -41,9 +43,9 @@ class Home extends Component {
             <h1>TOP CANCIONES 🎶​ </h1> 
             <Formulario/>
             { 
-            this.state.ready ? //if ternario
+            this.state.readySong ? //if ternario
                 <>
-                <CardPadre info = {this.state.topCanciones}/>
+                <CardPadre info = {this.state.topCanciones} songs = {true}/>
                 </> : 
             'Cargando...'
             }
@@ -57,14 +59,14 @@ class Home extends Component {
             
             <h1> TOP ALBUMS 🎶 </h1>
             
-           { /*{ 
-            this.state.ready ? //if ternario
+           { 
+            this.state.readyAlbums ? //if ternario
                 <>
                 <CardPadre info = {this.state.topAlbums}/>
                 </> : 
             'Cargando...'
             }
-            */ }
+           
         
             <div>
                 <Link to= "/allAlbums">
