@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import './CardHijo.css'
+import { Link } from 'react-router-dom'
 
 
  class CardHijo extends Component {
@@ -24,8 +25,27 @@ import './CardHijo.css'
                 showMore: true,
                 textoBoton: 'Ver menos'
             })
-        }
+        }    
     }
+
+    agregarYQuitarDeFavoritos(id){
+        //Tiene que agregar un id dentro de un array y guardarlo en localStorage
+        //Si el id ya existe ofrecer al usuario la posibilidad de quitar el id del array de favoritos
+
+        let favoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos')
+
+        if (recuperoStorage !== null){
+            
+            let favoritosToArray = JSON.parse(recuperoStorage);
+            favoritos = favoritosToArray
+        }
+
+        favoritos.push(id);
+        let favoritosToString = JSON.stringify(favoritos);
+        localStorage.setItem('favoritos',favoritosToString);
+    }
+    
 
     render() {
         return (
@@ -45,8 +65,17 @@ import './CardHijo.css'
                     <button onClick={
                         ()=> this.changeShowMore()
                     }>{this.state.textoBoton}</button>
-
-                    <button onClick={() => this.props.borrar(this.props.info.name)}>BORRAR</button>
+                    
+                    <p onClick={()=> this.agregarYQuitarDeFavoritos(this.props.data.data.id)}>AGREGAR A FAVORITOS</p>
+                    
+                    
+                    
+                    {/*<button onClick={() => this.props.borrar(this.props.info.name)}>BORRAR</button>*/}
+                   
+                        <Link to= "/details/:id">
+                            <button className='viewAllButton'>detalle</button>
+                        </Link>
+                    
                 </div>
         )
     }
