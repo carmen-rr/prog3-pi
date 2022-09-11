@@ -10,20 +10,20 @@ class AllAlbums extends Component {
             readyAlbums:false,
             backup: [],
             prueba:'', 
-            pagina: 0,
+            index : 0,
+            limit: 10,
 
         }
     }
 
     componentDidMount(){
-    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums")
+    fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=${this.state.index}&limit=${this.state.limit}`)
     .then(resp => resp.json())
     .then(data =>{ this.setState({
         topAlbums:data.data,
         readyAlbums: true,
         backup: data.data, 
-        pagina: this.state.pagina +1
-
+        index: this.state.index+this.state.limit
 
     })
     console.log("DATAALBUMS",data.data)}) 
@@ -31,11 +31,11 @@ class AllAlbums extends Component {
 }
 
 cargarMas(){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?page=${this.state.pagina + 1}`)
-        .then(resp => resp.json())
+    fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=${this.state.index}&limit=${this.state.limit}`)
+    .then(resp => resp.json())
         .then (data=> this.setState({
             topAlbums: this.state.topAlbums.concat(data.data), //adentro del concat guardo el array de resultados nuevo 
-            pagina: this.state.pagina + 1
+            index: this.state.index+this.state.limit
         }))
         .catch(err => console.log(err))
         }
