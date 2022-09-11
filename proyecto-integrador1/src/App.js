@@ -5,7 +5,7 @@ import {Switch, Route} from 'react-router-dom'
 import Header from "./components/Header/Header";
 //traigo los screens
 import Home from './screens/Home/Home'
-import AlbumDetail from "./screens/AlbumDetail /albumDetail";
+import AlbumDetail from "./screens/AlbumDetail/albumDetail";
 import TrackDetail from "./screens/TrackDetail/trackDetail";
 import AllTracks from "./screens/AllTracks/AllTracks";
 import AllAlbums from "./screens/AllAlbums/AllAlbums";
