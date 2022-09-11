@@ -9,32 +9,32 @@ class AllTracks extends Component {
         this.state = {
             topCanciones:[],
             ready:false,
-            pagina : '?index=18&limit=5',
+            index : 18,
+            limit: 5,
             backup: [],
             cards:[],
         }
     }
     
     componentDidMount(){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks${this.state.pagina}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?index=${this.state.index}&limit=${this.state.limit}`)
         .then(resp => resp.json())
         .then(data =>{ this.setState({
             topCanciones:data.data,
             ready: true,
             backup: data.data, 
-            pagina: this.state.pagina +1
-
+            index: this.state.index+this.state.limit
         })
         console.log("DATA",data.data)}) 
         .catch(err => console.log(err))
     }
 
     cargarMas(){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks${this.state.pagina+1}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?index=${this.state.index}&limit=${this.state.limit}`)
         .then(resp => resp.json())
         .then (data=> this.setState({
             topCanciones: this.state.topCanciones.concat(data.data), //adentro del concat guardo el array de resultados nuevo 
-            pagina: this.state.pagina + 1
+            index: this.state.index+this.state.limit
         }))
         .catch(err => console.log(err))
         }
