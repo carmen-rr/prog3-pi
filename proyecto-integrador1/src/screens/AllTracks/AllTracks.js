@@ -9,8 +9,9 @@ class AllTracks extends Component {
         this.state = {
             topCanciones:[],
             ready:false,
-            pagina : '?index=12&limit=7',
-            //backup: this.topCanciones,
+            pagina : '?index=18&limit=5',
+            backup: [],
+            cards:[],
         }
     }
     
@@ -19,14 +20,17 @@ class AllTracks extends Component {
         .then(resp => resp.json())
         .then(data =>{ this.setState({
             topCanciones:data.data,
-            ready: true
+            ready: true,
+            backup: data.data, 
+            pagina: this.state.pagina +1
+
         })
         console.log("DATA",data.data)}) 
         .catch(err => console.log(err))
     }
 
     cargarMas(){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks${this.state.pagina}+${this.state.pagina+1}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks${this.state.pagina+1}`)
         .then(resp => resp.json())
         .then (data=> this.setState({
             topCanciones: this.state.topCanciones.concat(data.data), //adentro del concat guardo el array de resultados nuevo 
@@ -34,6 +38,12 @@ class AllTracks extends Component {
         }))
         .catch(err => console.log(err))
         }
+
+        backup(){
+            this.setState({
+              topCanciones: this.state.backup
+            })
+          }
 
         componentDidUpdate(){
             console.log('Soy el update')
@@ -51,13 +61,13 @@ class AllTracks extends Component {
             { 
             this.state.ready ? //if ternario
                 <>
-                <CardPadre info = {this.state.topCanciones}/>
+                <CardPadre info = {this.state.topCanciones} songs = {true}/>
                 </> : 
             'Cargando...'
             }
             
             <button onClick={()=> this.cargarMas()}>Cargar Más</button>
-            {/*<button onClick={()=> this.backup()}>Backup</button>*/}
+            <button onClick={()=> this.backup()}>Backup</button>
 
         </>
       )

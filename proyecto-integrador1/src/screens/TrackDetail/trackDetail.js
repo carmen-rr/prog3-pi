@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Details extends Component{
+class TrackDetail extends Component{
     constructor(props){
         super (props)
         this.state={
@@ -29,4 +29,4 @@ class Details extends Component{
     }
 } 
 
-export default Details
+export default TrackDetail
