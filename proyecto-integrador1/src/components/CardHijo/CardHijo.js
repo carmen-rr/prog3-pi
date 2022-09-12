@@ -3,6 +3,7 @@ import './CardHijo.css'
 import { Link } from 'react-router-dom'
 
 
+
  class CardHijo extends Component {
     constructor(props){
         super(props)

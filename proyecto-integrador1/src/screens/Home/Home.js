@@ -35,13 +35,15 @@ class Home extends Component {
         })
         console.log("DATAALBUMS",data.data)}) 
         .catch(err => console.log(err))
+    
     }
+
     render() {     
         return (
         
             <>
             <h1>TOP CANCIONES 🎶​ </h1> 
-            <Formulario/>
+            <Formulario metodoQueBusca = {(nombre)=>this.filtrarPersonajes(nombre)}/>
             { 
             this.state.readySong ? //if ternario
                 <>
