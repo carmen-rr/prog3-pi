@@ -27,10 +27,11 @@ function Header (){
         <ul className="Navegador">
 
         <li> <Link to='/'>Home</Link></li>
-        <li><Link to='/categories'>Categories</Link></li>
-        <li><Link to='/details'>Details</Link></li>    
-        <li><Link to='/favorites'>Favorites</Link></li>
-        <li className='usuario'>Usuario </li>
+        <li><Link to='/allTracks'>Tracks</Link></li>    
+        <li><Link to='/allAlbums'>Albums</Link></li>    
+        <li><Link to='/albumDetail'>Album Detail</Link></li>    
+        <li><Link to='/trackDetail'>Track Detail</Link></li>    
+        <li><Link to='/favorites'>Favs</Link></li>
         
         </ul>
 
