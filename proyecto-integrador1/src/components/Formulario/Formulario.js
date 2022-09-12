@@ -17,17 +17,11 @@ class Formulario extends Component{
         this.setState(
             {valor: event.target.value},
             
-            ()=> this.props.metodoQueBusca(this.state.valor) //acá le tengo que pegar a la api de search?
+            ()=> this.props.metodoQueFiltra(this.state.valor) //acá le tengo que pegar a la api de search?
             
         )   
     }
     
-     filtrarPersonajes(nombre){
-        let arrayFiltrado = this.state.data.filter(data => data.name.includes(nombre))
-        this.setState({
-            datas: arrayFiltrado
-        })
-    }
         
     
 

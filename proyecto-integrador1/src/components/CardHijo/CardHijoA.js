@@ -2,8 +2,6 @@ import React,{Component} from 'react'
 import './CardHijo.css'
 import { Link } from 'react-router-dom'
 
-
-
  class CardHijoA extends Component {
     constructor(props){
         super(props)
