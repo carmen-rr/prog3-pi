@@ -8,13 +8,13 @@ function CardPadre (props) {
     <>
        
         {props.songs ?
-            props.info.map(elm => <CardHijo data={elm}/>)
+            props.info.map((elm, idx) => <CardHijo data={elm} key={elm.id.toString() + idx.toString()}/>)
         :
-            props.info.map(elm => <CardHijoA data = {elm}/> )
+            props.info.map((elm,idx) => <CardHijoA data ={elm} key={elm.id.toString() + idx.toString()}/> )
         }
 
         {props.esBusqueda ?
-            props.info.map(elm => <CardHijoB data = {elm} /> )
+            props.info.map((elm,idx) => <CardHijoB data ={elm} key={elm.id.toString() + idx.toString()}/> )
             
             :
             
