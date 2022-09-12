@@ -26,8 +26,7 @@ header {
     justify-content: center;
     background-color: red;
     border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+
 
 }
 .probando2{
@@ -35,9 +34,9 @@ header {
     display: none;
     justify-content: center;
     background-color: red;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;  
+
+
+
 }
 .logo{
     width: 100%;

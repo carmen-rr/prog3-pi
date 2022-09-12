@@ -2,9 +2,9 @@
 footer {
     background-color: #dedede;
     text-align: center;
-    padding: 40px 0;
+    padding: 40px;
     color: #666;
-    position: absolute;
+    position:static;
     bottom: 0;
     width: 100%;
 }
