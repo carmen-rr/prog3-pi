@@ -42,8 +42,8 @@ class TrackDetail extends Component{
                     <p>{this.state.topTracks.title}</p>
                     <p>{this.state.topTracks.artist.name}</p>
                     <p>{this.state.topTracks.album.title}</p>
-
-                   
+                    <iframe title="deezer-widget" src={`https://widget.deezer.com/widget/dark/track/${this.state.topTracks.id}`} width="1050" height="125" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>                  
+                    
 
                     </>
                    

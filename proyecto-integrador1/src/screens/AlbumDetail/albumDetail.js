@@ -42,10 +42,10 @@ class AlbumDetail extends Component {
                         <img src={this.state.topAlbums.cover} />
                         <p>{this.state.topAlbums.title}</p>
                         <p>{this.state.topAlbums.artist.name}</p>
-                        <p>{this.state.topAlbums.generes}</p>
+                        <p>{this.state.topAlbums.genres.data.name}</p>
                         <p>{this.state.topAlbums.release_date}</p>
 
-                        {this.state.topAlbums.tracks.map((opcion, idx) =><li> {this.state.topAlbums.tracks}</li>)}
+                        {/*{this.state.topAlbums.tracks.map((opcion, idx) =><li> {this.state.topAlbums.tracks}</li>)}*/}
 
                     </>
                    
