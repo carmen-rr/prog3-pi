@@ -1,6 +1,6 @@
 import React , {Component}from 'react'
-import { Link } from 'react-router-dom'
 import CardPadre from "../../components/CardPadre/CardPadre"
+
 
 class Favorites extends Component {
     constructor(props){
@@ -9,6 +9,9 @@ class Favorites extends Component {
             myTracks:[], //array de objetos literales con cada personaje 
             readySong:false,
             readyAlbums: false,
+
+
+
         }
     }
 
@@ -23,6 +26,7 @@ componentDidMount(){ //lo usamos para que el quitar favoritos si ya esta en el s
 
         let topCanciones = []
 
+
         tracksFavoritos.map((id) => {
 
 
@@ -34,18 +38,54 @@ componentDidMount(){ //lo usamos para que el quitar favoritos si ya esta en el s
             .catch(err => console.log(err))
         
         })
-    console.log(topCanciones)
+        console.log(topCanciones)
+
+  
+    {/*ALBUMS FAVORITOS */}
+
+
+        let albumsFavoritos = [];
+        let recuperoAlbumStorage = localStorage.getItem('albumsFavoritos')
+
+        if (recuperoAlbumStorage !== null){ //si hay datos en el storage (algo diferente de null, ya se cargaron datos en el storage)
+            albumsFavoritos = JSON.parse(recuperoAlbumStorage); //un array de ids
+           
+        let topAlbums = []
+
+        albumsFavoritos.map((id) => {
+
+
+            //pedir por cada id los datos del favorito
+            let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`
+            fetch(url)
+            .then(res => res.json())
+            .then(data => topAlbums.push(data))
+            .catch(err => console.log(err))
+        
+        })
+    console.log(topAlbums)
+}
 }
 }
 
 render(){
     return (
         <React.Fragment>
-        <div>Tus favoritos</div>
+        <h1>Tus Tracks favoritos</h1>
         { 
             this.state.ready ? //if ternario
                 <>
                 <CardPadre info = {this.state.topCanciones} songs = {true}/>
+                </> : 
+            'Cargando...'
+            }
+
+<h1>Tus Albums favoritos</h1>
+
+            { 
+            this.state.readyAlbums ? 
+                <>
+                <CardPadre info = {this.state.topAlbums}/>
                 </> : 
             'Cargando...'
             }
