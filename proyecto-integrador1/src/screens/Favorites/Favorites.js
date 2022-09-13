@@ -1,9 +1,24 @@
-import React from 'react'
+{/*import React, {Component} from 'react'
 
-function Favorites (){
+
+class Favoritos extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            arrayFavs:[]
+        }
+    }
+componentDidMount(){
+    let storage = localStorage.getItem('favoritos')
+    if(storage !== null ){
+        let parsedStorage = JSON.parse(storage)
+    }
+}
+
+render(){
     return (
-        <h1>Soy el Favorito</h1>
+        <div>Tus favoritos</div>
     )
-} 
-
-export default Favorites
+}
+}
+export default Favorites*/}
