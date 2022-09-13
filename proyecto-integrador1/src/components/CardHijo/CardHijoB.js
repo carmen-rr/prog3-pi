@@ -7,7 +7,12 @@ class CardHijoB extends Component {
   render() {
     console.log(this.props)
     return (
-      <div>{this.props.data.name}</div>
+      <div>
+        {this.props.data.name}
+        {this.props.data.cover}
+      
+      
+      </div>
     )
   }
 }

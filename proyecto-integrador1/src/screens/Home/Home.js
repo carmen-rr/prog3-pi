@@ -13,9 +13,9 @@ class Home extends Component {
             topAlbums: [],
             readySong:false,
             readyAlbums: false,
-            resultadosBusqueda: [],
             datas: [],
             valorBuscado: [],
+            sinResultados:false
         }
 
     }
@@ -53,16 +53,28 @@ class Home extends Component {
     }
 
     metodoQueBusca(valor){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search?q=${valor}`)
-        .then(resp => resp.json())
-        .then(data =>{ 
-            console.log(data)
-            this.setState({
-            valorBuscado : data.data
-        })
-            
-        })
-        .catch(console.error())
+        if(valor.length > 0){
+            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search?q=${valor}`)
+            .then(resp => resp.json())
+            .then(data =>{ 
+                if(data.data.length > 0){
+                this.setState({
+                    valorBuscado : data.data,
+                    sinResultados:false
+                })    
+                } else {
+                    this.setState({
+                        valorBuscado:[],
+                        sinResultados:true
+                    })
+                }
+            })
+            .catch(err => this.setState({
+                sinResultados:true
+            }, ()=> console.log('pasa por aqui')))
+        } else {
+            this.setState({valorBuscado: []})
+        }
     }
 
     render() {     
@@ -74,9 +86,12 @@ class Home extends Component {
             <Buscador metodoQueBusca ={(valor)=> this.metodoQueBusca(valor)}/>
 
             {
-                this.state.resultadosBusqueda.length > 0
+                this.state.sinResultados ?
+                <h1>No encontramos lo que buscas</h1>
+                :
+                this.state.valorBuscado.length > 0
                 ?
-                <CardPadre esBusqueda={true} info={this.state.resultadosBusqueda}/>
+                <CardPadre esBusqueda={true} info={this.state.valorBuscado}/>
                 : ''
             }
             
