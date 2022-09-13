@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CardPadre from "../../components/CardPadre/CardPadre"
+import './albumDetail.css';
 
 class AlbumDetail extends Component {
     constructor(props) {
@@ -36,19 +37,56 @@ class AlbumDetail extends Component {
             <>
 
                 {this.state.readyAlbums ?
-                <p>Cargando</p>
-                :
+                    <p>Cargando</p>
+                    :
                     <>
-                        <img src={this.state.topAlbums.cover} />
-                        <p>{this.state.topAlbums.title}</p>
-                        <p>{this.state.topAlbums.artist.name}</p>
-                        <p>{this.state.topAlbums.genres.data.name}</p>
-                        <p>{this.state.topAlbums.release_date}</p>
 
-                        {/*{this.state.topAlbums.tracks.map((opcion, idx) =><li> {this.state.topAlbums.tracks}</li>)}*/}
+                        
+                        
+                        
+                        
+
+
+                        <main class="main-detail-album">
+
+                            <article class="justice-title">
+                                <h1>{this.state.topAlbums.title}</h1>
+                            </article>
+
+                            <article class="article-main-album">
+                                <section class="section1-album">
+                                    <ul>
+                                        <img class="fotoalbum" src={this.state.topAlbums.cover_big} alt="Album" />
+                                        <h6>{this.state.topAlbums.release_date}</h6>
+
+                                        
+                                        {this.state.topAlbums.genres.data.map((genres) =>{
+                                            return <h3 className="genres-album">{genres.name}</h3>
+                                        })}
+                                        
+                                    
+                                    </ul>
+                                </section>
+
+                                <section class="section2-album">
+                                    <h3 class="detalles-album">{this.state.topAlbums.artist.name}</h3>
+                                    
+                                    <ul class="songs-album">
+
+                                        {this.state.topAlbums.tracks.data.map((track) =>{
+                                            return  <li><Link to={`/trackDetail/${this.state.topAlbums.id}`}>{track.title}</Link></li>
+                                        })}
+
+                                    </ul>
+
+                                </section>
+
+                            </article>
+
+                        </main>
 
                     </>
-                   
+
 
                 }
             </>
