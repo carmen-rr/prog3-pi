@@ -39,15 +39,15 @@ class TrackDetail extends Component{
                 :
                     <>
                                                          
-                        <main class="main-detail-track">
-                        <article class="track-detail">
+                        <main className="main-detail-track">
+                        <article className="track-detail">
                             <img src={this.state.topTracks.album.cover_big} alt="logo chico" class="img-dua"/>
-                                <section class="description-track">
-                                    <div class="title-track info-track">
-                                        <p class="add-playlist">Agregar a favoritos</p>                                    
+                                <section className="description-track">
+                                    <div className="title-track info-track">
+                                        <p className="add-playlist">Agregar a favoritos</p>                                    
                                         <h1>{this.state.topTracks.title}</h1>
                                         
-                                        <Link to={`/albumDetail/${this.state.topTracks.id}`}>
+                                        <Link to={`/albumDetail/${this.state.topTracks.album.id}`}>
                                         <p class="album-detail-track">{this.state.topTracks.album.title}</p>
                                         </Link>
                                         <h3>{this.state.topTracks.artist.name}</h3>

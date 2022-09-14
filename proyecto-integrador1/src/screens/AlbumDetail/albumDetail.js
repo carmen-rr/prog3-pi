@@ -47,16 +47,16 @@ class AlbumDetail extends Component {
                         
 
 
-                        <main class="main-detail-album">
+                        <main className="main-detail-album">
 
-                            <article class="justice-title">
+                            <article className="justice-title">
                                 <h1>{this.state.topAlbums.title}</h1>
                             </article>
 
-                            <article class="article-main-album">
+                            <article className="article-main-album">
                                 <section class="section1-album">
                                     <ul>
-                                        <img class="fotoalbum" src={this.state.topAlbums.cover_big} alt="Album" />
+                                        <img className="fotoalbum" src={this.state.topAlbums.cover_big} alt="Album" />
                                         <h6>{this.state.topAlbums.release_date}</h6>
 
                                         
@@ -68,13 +68,13 @@ class AlbumDetail extends Component {
                                     </ul>
                                 </section>
 
-                                <section class="section2-album">
-                                    <h3 class="detalles-album">{this.state.topAlbums.artist.name}</h3>
+                                <section className="section2-album">
+                                    <h3 className="detalles-album">{this.state.topAlbums.artist.name}</h3>
                                     
-                                    <ul class="songs-album">
+                                    <ul className="songs-album">
 
                                         {this.state.topAlbums.tracks.data.map((track) =>{
-                                            return  <li><Link to={`/trackDetail/${this.state.topAlbums.id}`}>{track.title}</Link></li>
+                                            return  <li><Link to={`/trackDetail/${track.id}`}>{track.title}</Link></li>
                                         })}
 
                                     </ul>

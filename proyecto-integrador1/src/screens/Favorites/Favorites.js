@@ -2,6 +2,7 @@ import React , {Component}from 'react'
 import CardPadre from "../../components/CardPadre/CardPadre"
 
 
+
 class Favorites extends Component {
     constructor(props){
         super(props)
@@ -52,6 +53,8 @@ componentDidMount(){ //lo usamos para que el quitar favoritos si ya esta en el s
            
         let topAlbums = []
 
+
+        
         albumsFavoritos.map((id) => {
 
 
@@ -72,10 +75,12 @@ render(){
     return (
         <React.Fragment>
         <h1>Tus Tracks favoritos</h1>
+
         { 
             this.state.ready ? //if ternario
                 <>
                 <CardPadre info = {this.state.topCanciones} songs = {true}/>
+
                 </> : 
             'Cargando...'
             }
