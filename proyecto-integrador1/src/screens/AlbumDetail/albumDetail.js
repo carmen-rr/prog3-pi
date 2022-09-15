@@ -15,20 +15,38 @@ class AlbumDetail extends Component {
         }
     }
 
+componentDidMount() {
+    fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${this.state.id}`)
+        .then(resp => resp.json())
+        .then(data => {
+            console.log(data)
+            this.setState({
+                topAlbums: data,
+                readyAlbums: false,
+
+            })
+        })
+        .catch(err => console.log(err))
+
+}
+
+    /*LO QUE EMPEZO A MOSTRARNOS NELSON PARA QUE CAMBIANDO LA URL EN DETALLES NO ROMPA Y MUESTRE ERROR
     componentDidMount() {
         fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${this.state.id}`)
             .then(resp => resp.json())
             .then(data => {
+                console.log('Esta es la data que retorna')
                 console.log(data)
-                this.setState({
-                    topAlbums: data,
-                    readyAlbums: false,
-
-                })
+                if(!data.error){
+                    this.setState({
+                        topAlbums: data,
+                        readyAlbums: false,
+                    })
+                }
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log("OCURRIO UN ERROR"))
 
-    }
+    }*/
 
 
     render() {
