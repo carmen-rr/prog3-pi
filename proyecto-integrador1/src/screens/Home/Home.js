@@ -85,7 +85,7 @@ class Home extends Component {
             <>
             <Formulario metodoQueFiltra = {(nombre)=>this.filtrarPersonajes(nombre)}/> 
             <Buscador metodoQueBusca ={(valor)=> this.metodoQueBusca(valor)}/>
-            <h1>TOP CANCIONES 🎶​ </h1> 
+            <h1>TOP TRACKS 🎶​ </h1> 
             <div className='todo-container'>
             {
                 this.state.sinResultados ?
@@ -102,7 +102,7 @@ class Home extends Component {
                 <>
                 <CardPadre info = {this.state.topCanciones} songs = {true}/>
                 </> : 
-            'Cargando...'
+            'Loading...'
             }
             </div>
 
@@ -123,7 +123,7 @@ class Home extends Component {
                 <>
                 <CardPadre info = {this.state.topAlbums}/>
                 </> : 
-            'Cargando...'
+            'Loading...'
             }
             </div>
 

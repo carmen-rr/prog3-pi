@@ -55,7 +55,7 @@ componentDidMount() {
             <>
 
                 {this.state.readyAlbums ?
-                    <p>Cargando</p>
+                    <p>Loading...</p>
                     :
                     <>
 
@@ -72,7 +72,7 @@ componentDidMount() {
                             </article>
 
                             <article className="article-main-album">
-                                <section class="section1-album">
+                                <section className="section1-album">
                                     <ul>
                                         <img className="fotoalbum" src={this.state.topAlbums.cover_big} alt="Album" />
                                         <h6>{this.state.topAlbums.release_date}</h6>

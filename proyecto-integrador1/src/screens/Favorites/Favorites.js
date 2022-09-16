@@ -71,7 +71,7 @@ class Favorites extends Component {
 render(){
     return (
         <React.Fragment>
-        <h1>Tus Tracks favoritos</h1>
+        <h1>Your favorite tracks</h1>
 
         { 
             this.state.readySong ? //if ternario this.state.readysong es false
@@ -80,17 +80,17 @@ render(){
                 <>
                 <CardPadre info = {this.state.myTracks} songs = {this.state.readySong}/>
                 </> : 
-            'Cargando...'//con false entra aca
+            'Loading...'//con false entra aca
             }
 
-<h1>Tus Albums favoritos</h1>
+<h1>Your favorite albums</h1>
 
             { 
             this.state.readyAlbums ? 
                 <>
                 <CardPadre info = {this.state.myAlbums} albums = {this.state.readyAlbums}/>
                 </> : 
-            'Cargando...'
+            'Loading...'
             }
             
         </React.Fragment>

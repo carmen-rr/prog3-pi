@@ -45,31 +45,24 @@ class AllTracks extends Component {
             })
           }
 
-        componentDidUpdate(){
-            console.log('Soy el update')
-          }
-
-          componentWillUnmount(){
-            console.log('Soy el Unmount')
-          }
 
     render() {     
         return (
         
-            <>
+            <React.Fragment>
             <h1>ALL TRACKS​ </h1> 
             { 
             this.state.ready ? //if ternario
                 <>
                 <CardPadre info = {this.state.topCanciones} songs = {true}/>
                 </> : 
-            'Cargando...'
+            'Loading...'
             }
             
-            <button onClick={()=> this.cargarMas()}>Cargar Más</button>
-            <button onClick={()=> this.backup()}>Backup</button>
+            <button onClick={()=> this.cargarMas()}>More tracks</button>
+            <button onClick={()=> this.backup()}>Less tracks</button>
 
-        </>
+        </React.Fragment>
       )
     }
   }

@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom'
         super(props)
         this.state ={
             showMore:false,
-            textoBoton:'Ver mas', 
-            messageFav : 'Agregar album a Favoritos' //este string va a ir cambiando
+            textoBoton:'More info', 
+            messageFav : 'Add to my favorite albums' //este string va a ir cambiando
 
         }
     }
@@ -25,7 +25,7 @@ import { Link } from 'react-router-dom'
 
         if (albumsFavoritos.includes (this.props.data.id)){
             this.setState({
-                messageFav : 'Quitar album de Favoritos'
+                messageFav : 'Add to my favorite albums'
             })
         }
     }
@@ -35,13 +35,13 @@ import { Link } from 'react-router-dom'
             console.log(this.state.showMore)
             this.setState({
                 showMore: false,
-                textoBoton: 'Ver más'
+                textoBoton: 'More info'
             })
         } else {
             console.log(this.state.showMore)
             this.setState({
                 showMore: true,
-                textoBoton: 'Ver menos'
+                textoBoton: 'Less info'
             })
         }
     }
@@ -63,13 +63,13 @@ import { Link } from 'react-router-dom'
             albumsFavoritos = albumsFavoritos.filter(unId=> unId !== id) // aplicando el metodo filter al array de favoritos para comparar elementos y decida y lo guardo en la misma variable 
                 //mostrar al usuario agregar a favoritos
             this.setState({
-                messageFav:'Agregar album a Favoritos'
+                messageFav:'Add to my favorite albums'
             })
         } else {
             albumsFavoritos.push(id)//agregamos id al array (el dato se agrega con el metodo push)
             //mostrar al usuario quitar de favoritos
             this.setState({
-                messageFav:'Quitar album de Favoritos'
+                messageFav:'Remove from my favorite albums'
             })
         }
 
@@ -91,7 +91,7 @@ import { Link } from 'react-router-dom'
                     <h3>{this.props.data.title}</h3>
                     <h4>{this.props.data.artist.name}</h4>
                     
-                    <p>No te pierdas lo nuevo de </p> 
+                    <p>Don't miss out the latest from</p> 
                     {
                     this.state.showMore ? <p>{this.props.data.artist.name}</p> : ''
                     }
@@ -105,7 +105,7 @@ import { Link } from 'react-router-dom'
                     {/*<button onClick={() => this.props.borrar(this.props.info.name)}>BORRAR</button>*/}
 
                     <Link to= {`/albumDetail/${this.props.data.id}`}>
-                            <button className='buttonHome'>detalle</button>
+                            <button className='buttonHome'>Details</button>
                         </Link>
                 </div>
                  

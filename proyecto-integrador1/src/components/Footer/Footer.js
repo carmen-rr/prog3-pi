@@ -6,7 +6,7 @@ function Footer
   return (
 
 <footer>
-        <p class="integrantes"> Copyright © Tomás Sanz Belloni, Carmen Rodríguez Reynoso y María Paz Russell - Programación III primavera 2022</p>
+        <p className="integrantes"> Copyright © Tomás Sanz Belloni, Carmen Rodríguez Reynoso y María Paz Russell - Programación III primavera 2022</p>
     </footer>    
 
 );

@@ -46,19 +46,12 @@ cargarMas(){
             })
           }
 
-          componentDidUpdate(){
-            console.log('Soy el update')
-          }
-
-          componentWillUnmount(){
-            console.log('Soy el Unmount')
-          }
 
 
         render() {     
             return (
 
-                <>
+                <React.Fragment>
                 <h1> TOP ALBUMS 🎶 </h1>
             
                 { 
@@ -66,13 +59,13 @@ cargarMas(){
                      <>
                 <CardPadre info = {this.state.topAlbums}/>
                      </> : 
-                 'Cargando...'
+                 'Loading...'
                  }
 
-                 <button onClick={()=> this.cargarMas()}>Cargar Más</button>
-                 <button onClick={()=> this.backup()}>Backup</button>
+                 <button onClick={()=> this.cargarMas()}>More albums</button>
+                 <button onClick={()=> this.backup()}>Less albums</button>
                
-                 </>
+                 </React.Fragment>
                  )
                }
              }
