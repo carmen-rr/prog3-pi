@@ -1,6 +1,6 @@
  .card-hijo{
     margin:0 1rem 2rem;
-    padding: 3rem;
+    padding: 10px;
     border-radius: 50px;
     background-color: grey;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.829);
@@ -8,7 +8,26 @@
     display: flex;
     /*flex-direction:row-reverse;*/
     align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 38vw;
     
+}
+
+.imgHome {
+    height: 30vh;
+}
+
+.buttonHome {
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.info {
+    margin-left: 50px;
 }
 
 

@@ -105,7 +105,7 @@ import { Link } from 'react-router-dom'
                     {/*<button onClick={() => this.props.borrar(this.props.info.name)}>BORRAR</button>*/}
 
                     <Link to= {`/albumDetail/${this.props.data.id}`}>
-                            <button className='viewAllButton'>detalle</button>
+                            <button className='buttonHome'>detalle</button>
                         </Link>
                 </div>
                  

@@ -11,6 +11,7 @@ header {
 
 a{
     color: white;
+    font-size: medium;
 }
 .imagenes-logo{
     display: flex;

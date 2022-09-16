@@ -1,0 +1,19 @@
+.todo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.viewAllButton{
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    margin: 5px;
+    border-radius: 12px;
+    font-size: 24px;
+    width: 100%;
+}
+
+.botoncito{
+    display: flex;
+    justify-content: center;
+}

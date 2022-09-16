@@ -85,31 +85,44 @@ import { Link } from 'react-router-dom'
     render() {
         return (
                 <div className='card-hijo'>
-                    <img
+
+                  <div className="imgContainer">
+                    <img className='imgHome'
                         src={this.props.data.album.cover}
                         alt={`Una imagen de ${this.props.data.album.title}`}
                     />
+                    </div>
+
+                    <div className="info">
+                    <article>
                     <h3>{this.props.data.album.title}</h3>
                     <h4>{this.props.data.artist.name}</h4>
+                    </article>
                     
+                    <article>
                     <p>No te pierdas lo nuevo de </p> 
                     {
                     this.state.showMore ? <p>{this.props.data.artist.name}</p> : ''
                     }
                     
+                    
                     <button onClick={
                         ()=> this.changeShowMore()
-                    }>{this.state.textoBoton}</button>
+                    } className="buttonHome">{this.state.textoBoton}</button>
+                    </article>
                     
+                    <article>
                     <p onClick={()=> this.agregarYQuitarDeFavoritos(this.props.data.id)}>{this.state.messageFav}</p>
-                    
+                    </article>
                     
                     
                     {/*<button onClick={() => this.props.borrar(this.props.info.name)}>BORRAR</button>*/}
-                   
+                    <article>
                         <Link to= {`/trackDetail/${this.props.data.id}`}>
-                            <button className='viewAllButton'>detalle</button>
+                            <button className='buttonHome'>detalle</button>
                         </Link>
+                    </article>
+                    </div>
                     
                 </div>
         )

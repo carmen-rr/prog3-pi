@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import CardPadre from "../../components/CardPadre/CardPadre"
 import Formulario from '../../components/Formulario/Formulario'
 import Buscador from '../../components/Formulario/Buscador'
+import './home.css'
+
 
 class Home extends Component {
     constructor(props){
@@ -21,7 +23,7 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?index=12&limit=5")
+        fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?index=12&limit=6")
         .then(resp => resp.json())
         .then(data =>{ this.setState({
             topCanciones: data.data,
@@ -32,7 +34,7 @@ class Home extends Component {
         .catch(err => console.log(err))
     
         
-        fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=5")
+        fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=1&limit=6")
         .then(resp => resp.json())
         .then(data =>{ this.setState({
             topAlbums: data.data,
@@ -81,10 +83,10 @@ class Home extends Component {
         return (
         
             <>
-            <h1>TOP CANCIONES 🎶​ </h1> 
             <Formulario metodoQueFiltra = {(nombre)=>this.filtrarPersonajes(nombre)}/> 
             <Buscador metodoQueBusca ={(valor)=> this.metodoQueBusca(valor)}/>
-
+            <h1>TOP CANCIONES 🎶​ </h1> 
+            <div className='todo-container'>
             {
                 this.state.sinResultados ?
                 <h1>No encontramos lo que buscas</h1>
@@ -102,10 +104,11 @@ class Home extends Component {
                 </> : 
             'Cargando...'
             }
+            </div>
 
             
             
-            <div>
+            <div className='botoncito'>
                 <Link to= "/allTracks">
                     <button className='viewAllButton'>MORE TRACKS</button>
                 </Link>
@@ -114,6 +117,7 @@ class Home extends Component {
             
             <h1> TOP ALBUMS 🎶 </h1>
             
+            <div className='todo-container'>
            { 
             this.state.readyAlbums ? //if ternario
                 <>
@@ -121,9 +125,11 @@ class Home extends Component {
                 </> : 
             'Cargando...'
             }
+            </div>
+
            
         
-            <div>
+            <div className='botoncito'>
                 <Link to= "/allAlbums">
                     <button className='viewAllButton'>MORE ALBUMS</button>
                 </Link>

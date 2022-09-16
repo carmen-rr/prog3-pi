@@ -19,11 +19,6 @@ function Header (){
     </section>
     <nav className="navegador">
         <img src="imagenes/logo3.PNG" alt="Logo Planet Music"/> 
-        <form action="search-results.html" method="GET" className="search">
-            <input type="text" name="search" value="" placeholder="Search..."/>
-            <button type="submit"><i className="fa fa-search"></i></button>
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </form>
         <ul className="Navegador">
 
         <li> <Link to='/'>Home</Link></li>
