@@ -5,33 +5,18 @@ import './header.css';
 function Header (){
     return (
     <header>
-        
-    <section className="logo">
-        <div className="imagenes-logo">
-            <img src="imagenes/anytime-slogan.PNG" alt="Music Anytime" className="slogan"/>
-            <img src="imagenes/logo3.PNG" alt="Logo Planet Music"/>
-            <img src="imagenes/anywhere-slogan.PNG" alt="Music Anywhere" className="slogan"/>
-        </div>
-        <div className="alerta">
-            <p className="probando1">The field can't be empty</p>
-            <p className="probando2">You should enter at least three characters</p>
-        </div>  
-    </section>
+    <div className='cajaLogo'>
+    <img src="imagenes/dmCompleto.PNG"  className="logo"/> 
+    </div>
     <nav className="navegador">
-        <img src="imagenes/logo3.PNG" alt="Logo Planet Music"/> 
-        <ul className="Navegador">
-
-        <li> <Link to='/'>Home</Link></li>
-           
+    
+        <img src="imagenes/DigitalMusic.PNG" className='logoTexto'/>
+        <ul>
+        <li><Link to='/'>Home</Link></li>
         <li><Link to='/favorites'>Favs</Link></li>
-        
         </ul>
 
-
-        
     </nav>
-
-
 
     </header>
        
