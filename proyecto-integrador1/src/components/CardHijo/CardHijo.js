@@ -100,9 +100,15 @@ import { Link } from 'react-router-dom'
                     </article>
                     
                     <article>
-                    <p> Don't miss out the latest from </p> 
+                   
                     {
-                    this.state.showMore ? <p>{this.props.data.artist.name}</p> : ''
+                    this.state.showMore ?  
+                    <p> Don't miss out the latest from {this.props.data.artist.name}
+                    
+                    
+                    </p> 
+                    
+                    : ''
                     }
                     
                     
