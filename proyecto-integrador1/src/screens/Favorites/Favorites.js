@@ -10,8 +10,6 @@ class Favorites extends Component {
             myTracks:[], //array de objetos literales con cada personaje 
             readySong:false,
             readyAlbums: false,
-            
-
 
 
         }

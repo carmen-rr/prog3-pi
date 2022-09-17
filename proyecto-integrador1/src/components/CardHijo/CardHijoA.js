@@ -25,7 +25,7 @@ import { Link } from 'react-router-dom'
 
         if (albumsFavoritos.includes (this.props.data.id)){
             this.setState({
-                messageFav : 'Add to my favorite albums'
+                messageFav : 'Remove from my favorite albums'
             })
         }
     }
