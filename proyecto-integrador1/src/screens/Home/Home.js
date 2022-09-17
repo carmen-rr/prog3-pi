@@ -83,8 +83,10 @@ class Home extends Component {
         return (
         
             <>
+            <div className='buscadores'>
             <Formulario metodoQueFiltra = {(nombre)=>this.filtrarPersonajes(nombre)}/> 
             <Buscador metodoQueBusca ={(valor)=> this.metodoQueBusca(valor)}/>
+            </div>
             <h1>TOP TRACKS 🎶​ </h1> 
             <div className='todo-container'>
             {

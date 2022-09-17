@@ -25,8 +25,8 @@ class Formulario extends Component{
         
     render(){
         return(
-            <form onSubmit={(event)=>this.evitarSubmit(event)} className = "formulario">
-                <input type="text" onChange={(event)=>this.guardarValor(event)} value={this.state.valor} placeholder = '¿Qué estas buscando?'/>
+            <form onSubmit={(event)=>this.evitarSubmit(event)} >
+            <input className="search" type="text" onChange={(event)=>this.guardarValor(event)} value={this.state.valor} placeholder = '¿Qué estas buscando?'/>
             </form>
         )
     }
