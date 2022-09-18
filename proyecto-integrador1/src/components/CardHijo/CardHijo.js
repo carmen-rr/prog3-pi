@@ -100,6 +100,10 @@ import { Link } from 'react-router-dom'
                     </article>
                     
                     <article>
+
+                    <button onClick={
+                        ()=> this.changeShowMore()
+                    } className="buttonHome">{this.state.textoBoton}</button>
                    
                     {
                     this.state.showMore ?  
@@ -111,10 +115,6 @@ import { Link } from 'react-router-dom'
                     : ''
                     }
                     
-                    
-                    <button onClick={
-                        ()=> this.changeShowMore()
-                    } className="buttonHome">{this.state.textoBoton}</button>
                     </article>
                     
                     <article>
@@ -122,7 +122,6 @@ import { Link } from 'react-router-dom'
                     </article>
                     
                     
-                    {/*<button onClick={() => this.props.borrar(this.props.info.name)}>BORRAR</button>*/}
                     <article>
                         <Link to= {`/trackDetail/${this.props.data.id}`}>
                             <button className='buttonHome'>Details</button>

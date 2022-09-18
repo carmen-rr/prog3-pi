@@ -10,7 +10,7 @@ class AllTracks extends Component {
             topCanciones:[],
             ready:false,
             index : 18,
-            limit: 5,
+            limit: 6,
             backup: [],
             cards:[],
         }

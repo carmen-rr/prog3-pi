@@ -30,7 +30,7 @@ class Home extends Component {
             topCancionesBackUp: data.data,
             readySong: true
         })
-        console.log("DATA",data.data)}) //preg a Eve
+        console.log("DATA",data.data)})
         .catch(err => console.log(err))
     
         
@@ -128,8 +128,6 @@ class Home extends Component {
             'Loading...'
             }
             </div>
-
-           
         
             <div className='botoncito'>
                 <Link to= "/allAlbums">

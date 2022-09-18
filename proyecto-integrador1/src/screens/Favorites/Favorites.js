@@ -66,8 +66,8 @@ class Favorites extends Component {
 
 
 
-render(){
-    return (
+    render(){
+         return (
         <React.Fragment>
         <h1>Your favorite tracks</h1>
 
@@ -81,7 +81,7 @@ render(){
             'Loading...'//con false entra aca
             }
 
-<h1>Your favorite albums</h1>
+            <h1>Your favorite albums</h1>
 
             { 
             this.state.readyAlbums ? 
