@@ -1,5 +1,6 @@
 import React , {Component} from 'react'
 import CardPadre from "../../components/CardPadre/CardPadre"
+import './allAlbums.css';
 
 class AllAlbums extends Component {
     constructor(props){
@@ -56,14 +57,19 @@ cargarMas(){
                 { 
                  this.state.readyAlbums ? //if ternario
                      <>
+                <div className='todo-container'>
                 <CardPadre info = {this.state.topAlbums}/>
-                     </> : 
+                </div>
+                     </> 
+                     
+                : 
                  'Loading...'
                  }
-
-                 <button onClick={()=> this.cargarMas()}>More albums</button>
-                 <button onClick={()=> this.backup()}>Less albums</button>
-               
+                
+                 <div className='botones'>
+                 <button className='viewAllButton' onClick={()=> this.cargarMas()}>More albums</button>
+                 <button className='viewAllButton' onClick={()=> this.backup()}>Less albums</button>
+                 </div>
                  </React.Fragment>
                  )
                }

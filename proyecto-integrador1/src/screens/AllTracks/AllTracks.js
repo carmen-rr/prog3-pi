@@ -1,5 +1,6 @@
 import React , {Component} from 'react'
 import CardPadre from "../../components/CardPadre/CardPadre"
+import './allTracks.css';
 
 
 class AllTracks extends Component {
@@ -53,14 +54,17 @@ class AllTracks extends Component {
             { 
             this.state.ready ? //if ternario
                 <>
+                <div className='todo-container'>
                 <CardPadre info = {this.state.topCanciones} songs = {true}/>
+                </div>
                 </> : 
             'Loading...'
             }
             
-            <button onClick={()=> this.cargarMas()}>More tracks</button>
-            <button onClick={()=> this.backup()}>Less tracks</button>
-
+            <div className='botones'> 
+            <button className='viewAllButton' onClick={()=> this.cargarMas()}>More tracks</button>
+            <button className='viewAllButton' onClick={()=> this.backup()}>Less tracks</button>
+            </div>
         </React.Fragment>
       )
     }
