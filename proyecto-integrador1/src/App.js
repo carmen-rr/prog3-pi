@@ -3,7 +3,8 @@
 import React from "react";
 import {Switch, Route} from 'react-router-dom'
 import Header from "./components/Header/Header";
-//traigo los screens
+
+//importo (traigo) los screens
 import Home from './screens/Home/Home'
 import AlbumDetail from "./screens/AlbumDetail/albumDetail";
 import TrackDetail from "./screens/TrackDetail/trackDetail";
@@ -16,7 +17,7 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <>
+    <React.Fragment>
     <Header /> 
       <main>
         <Switch>
@@ -31,7 +32,7 @@ function App() {
         </main>
       
       < Footer/> 
-    </>
+      </React.Fragment>
   );
  }
  

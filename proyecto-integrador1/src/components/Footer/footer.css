@@ -1,6 +1,6 @@
 /* footer */
 footer {
-    background-color: #124d7c;
+    background-color: #dedede;
     text-align: center;
     padding: 40px;
     color: #666;
@@ -9,7 +9,5 @@ footer {
 }
 .integrantes{
     margin: 10px;
-    color: white;
-
 }
 

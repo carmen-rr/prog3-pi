@@ -1,11 +1,20 @@
 /* HEADER */
 
+*{
+    box-sizing: border-box;
+}
+
 .logo{
     width: 15%;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    position: center;
 }
-.cajaLogo{
-    align-items: center;
-}
+.cajaLogo {
+    display: flex;
+    justify-content: center;
+ }
+
 .logoTexto{
     size: 2%;
 }
@@ -14,48 +23,36 @@
     height: 70px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    
     align-items: center;
-    background-color: #124d7c;
+    background-color:  rgb(16, 135, 233)
+    
+}
+.navegador ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    
 }
 .navegador img{
     height: 100%;
     margin-right: 10px;
 }
-
-
-
-
-
-
-
-.search{
-    width: 30%;
-    display: flex;
+nav li{
+    font-size: 200%;
+    justify-content: space-between;
     flex-wrap: wrap;
+    margin-left: 20%;
+    
+    
 }
-.search input {
-    font-size: 17px;
-    background-image: linear-gradient(rgb(24, 24, 24), black );
-    width: 80%;
-    padding: 10px;
-    border: none;
-    border-bottom: solid 3px rgb(16, 135, 233);
-}
-.search button {
-    font-size: 17px;
-    background-image: linear-gradient(rgb(24, 24, 24), black );
-    color: white;
-    width: 10%;
-    padding: 10px;
-    border: none;
-    border-bottom: solid 3px rgb(16, 135, 233);
-    cursor: pointer;
-}
-.search button:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-bottom: solid 3px rgb(16, 135, 233);
-}
+
+
+
+
+
+
 
 
 

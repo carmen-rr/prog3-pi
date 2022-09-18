@@ -1,4 +1,5 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
+import "./Formulario.css";
 
 class Buscador extends Component {
     constructor(props) {
@@ -16,11 +17,13 @@ class Buscador extends Component {
 
     render() {
         return (
+        
         <form onSubmit={(event)=>this.evitarSubmit(event)}>
-        <label>Name:</label>
-        <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} />
-        <input type="submit" value="Submit" />
+        <input className="search" type="text" placeholder="Buscar..." onChange={(event)=>this.controlarCambios(event)} value={this.state.valor}/>
+        <input className="boton" type="submit" value="Buscar" />
         </form>
+        
+        
         );
         }
        }
