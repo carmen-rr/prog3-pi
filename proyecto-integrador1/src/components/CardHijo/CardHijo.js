@@ -95,8 +95,8 @@ import { Link } from 'react-router-dom'
 
                     <div className="info">
                     <article>
-                    <h3>{this.props.data.album.title}</h3>
-                    <h4>{this.props.data.artist.name}</h4>
+                        <h3>{this.props.data.album.title}</h3>
+                        <h4>{this.props.data.artist.name}</h4>
                     </article>
                     
                     <article>

@@ -84,32 +84,45 @@ import { Link } from 'react-router-dom'
     render() {
         return (
                 <div className='card-hijo'>
-                    <img
+                    <div className="imgContainer">
+                    <img className='imgHome'
                         src={this.props.data.cover}
                         alt={`Una imagen de ${this.props.data.title}`}
                     />
-                    <h3>{this.props.data.title}</h3>
-                    <h4>{this.props.data.artist.name}</h4>
+                    </div>
+                   
+                    <div className="info">
+                    <article>
+                        <h3>{this.props.data.title}</h3>
+                        <h4>{this.props.data.artist.name}</h4>
+                    </article>
                     
-                    <p>Don't miss out the latest from</p> 
+                   <article className='ver-mas'>
                     {
-                    this.state.showMore ? <p>{this.props.data.artist.name}</p> : ''
+                    this.state.showMore ? 
+                    <p>Don't miss out the latest from {this.props.data.artist.name}</p> 
+                    : ''
                     }
                     
                     <button onClick={
                         ()=> this.changeShowMore()
-                    }>{this.state.textoBoton}</button>
+                    } className="buttonHome">{this.state.textoBoton}</button>
+                    </article>
 
+                    <article>
                     <p onClick={()=> this.agregarYQuitarDeFavoritos(this.props.data.id)}>{this.state.messageFav}</p>
-
+                    </article>
+                    
                     {/*<button onClick={() => this.props.borrar(this.props.info.name)}>BORRAR</button>*/}
 
-                    <Link to= {`/albumDetail/${this.props.data.id}`}>
+                        <article>
+                        <Link to= {`/albumDetail/${this.props.data.id}`}>
                             <button className='buttonHome'>Details</button>
                         </Link>
-                </div>
+                        </article>
+                    </div>
+            </div>
                  
-
         )
     }
 }
