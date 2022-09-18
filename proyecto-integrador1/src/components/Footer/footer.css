@@ -1,9 +1,9 @@
 /* footer */
 footer {
-    background-color: #dedede;
+    background-color: rgb(16, 135, 233);
     text-align: center;
     padding: 40px;
-    color: #666;
+    color: white;
     bottom: 0;
     width: 100%;
 }
